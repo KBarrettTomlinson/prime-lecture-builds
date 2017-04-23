@@ -1,0 +1,134 @@
+{\rtf1\ansi\ansicpg1252\cocoartf1504\cocoasubrtf810
+{\fonttbl\f0\fswiss\fcharset0 Helvetica;}
+{\colortbl;\red255\green255\blue255;\red27\green31\blue34;\red255\green255\blue255;}
+{\*\expandedcolortbl;;\cssrgb\c14118\c16078\c18039;\cssrgb\c100000\c100000\c100000;}
+\margl1440\margr1440\vieww13980\viewh13080\viewkind0
+\pard\tx720\tx1440\tx2160\tx2880\tx3600\tx4320\tx5040\tx5760\tx6480\tx7200\tx7920\tx8640\pardirnatural\partightenfactor0
+
+\f0\fs32 \cf0 \
+SET UP\
+1 mkdir inventory-server-build\
+2. touch .gitignore\
+3. Add .DS_Store to .gitignore\
+4. Add node_modules to .gitignore\
+5. Git init\
+6. Set up repository on GitHub\
+7. Git remote add origin\
+8. npm init\
+9. Add start script to new package.json file \'93node server/app.js\'94\
+10. npm install express \'97save\
+11. npm install body-parser \'97save\
+12. npm install jquery \'97save\
+13. Set up directory and file structure. \
+	server	public	views	html/css\
+			app.js	scripts	client.js\
+					vendors	jquery.js\
+14. Move jQuery into vendors folder\
+15. Make initial commit\
+\
+SPIN UP NODE /EXPRESS SERVER\
+1.app.js set up scaffolding //requires //uses //spin up server/listening\
+2. Requires express, global app = express()\
+3. Var port;\
+4. Listening app.listen\
+5. Test on terminal that app.js is listening\
+\
+SEND BACK INDEX.HTML VIA APP.JS WITH SOURCED JS FILES\
+1. Setting this up temporarily in app.js, will eventually move over to a module called index.js\
+2. Require path\
+3.  DO NOT USE ROUTER. ROUTER IS FOR MODULES\
+4. app. Use lets the client know where the route directory is]\
+5. app.use tells the server that there is a generic /\
+6. app.get responds to a generic get request \
+7. Set up basic Index.html source in jQuery and client.js\
+8. Test connection\
+\
+REFACTOR APP.JS TO USE AN \'91INDEX.JS\'92 EXPRESS ROUTER MODULE FOR INDEX.HTML\
+1. mkdir modules\
+2. Touch index.js\
+3. index.js require express require path\
+4. index.js router = express.Router();\
+5. Set up the get for any request that is sent to just \'93/\'93\
+6. Use res.sendFile to give them index.html\
+7. Set up export\
+8. require var index = require\'85\
+9. Remove get from app.js\
+10. Set up app.use for index.js\
+11. Test connection\
+\
+SET UP BASIC INTERFACE ON INDEX.HTML\
+1. Change header\
+2. Set up #idItems Div\
+3. Add h2 Add Item Inventory\
+4. Set up inputs for #idItems div\
+5. Set up button for #idItems div\
+6. Test #idItems div setup\
+7. Set up #searchItems div\
+8. Add h2 Search\
+9. Add input and button for Name Search and Description Search\
+10. Add button for clear\
+11. Test #searchItems setup\
+12. Set up #outputDiv\
+13. Test #outputDiv setup\
+14. Set up empty holders for style.css\
+15. Add background colors and padding to divs\
+\
+TEST JQ INTERACTIVE ELEMENTS\
+1. Set up document.ready\
+2. Create basic on click for all buttons, console.log \
+3. Test click connections\
+\pard\pardeftab720\sl360\partightenfactor0
+\cf2 \cb3 \expnd0\expndtw0\kerning0
+\
+SETUP \'91INVENTORY.JS\'92 WITH TEMP INVENTORY ARRAY AND GET ROUTE TO RETURN SAID ARRAY\
+GET AJAX CALL TO INVENTORY RETURNS ARRAY\
+\cf0 \cb1 \kerning1\expnd0\expndtw0 1. Navigate to modules directory\
+2. Touch inventory.js\
+3. Organize file //require //globals //routes\
+4. Require express and path\
+5. Set up var router\
+6. Set up var inventoryArray add dummy data.\
+7. Set up get\
+8. Export module router\
+9. In app.js set up an app.use for /inventory\
+10. In app.js require inventory.js\
+11. In client.js establish refreshInventoryArray function \
+12. In the function make an Ajax get request\
+13. From the Ajax get request call a function that appends to the DOM\
+14. Test the connection\
+\
+POST AJAX CALL TO INVENTORY ADDS NEW ITEM TO ARRAY ON THE SERVER DISPLAY INVENTORY ON DOM\
+1. Inside inventory.js modules set up a router.post for /add\
+2. Inside app.js set up bodyParser require\
+3. Set up app.use body parser as middleware\
+4. Take the body of the request, push it to the inventory array\
+5. Send back a respond, convention tells us to send back 200\
+6. Set up on click for add button\
+7. Collect an object of data\
+8. Post that object to the server using ajax - add in error messaging\
+9. Refresh inventory display\
+10. Test connection\
+11. Delete dummy data from Inventory\
+12. Test adding several items\
+\
+POST AJAX CALL TO CHECK IF ANY OBJECTS NAMES CONTAIN THE GIVEN SEARCH STRING & RETURN APPROPRIATE ARRAY\
+1. Create on click function for search by name button\
+2. Var = objectToSend\
+3. Object is the value in the name search field\
+4. Console log the object, just to test\
+5. Send that object to a function which executed an Ajax POST\
+6. Respond with an array that you can send to displayInventory, this takes place of the getInventory function.\
+7. Set up in inventory module, search function. As a router.post\
+8. Test the connection\
+9. Write if then statement to check the Inventory array for a match send back an array\
+10. Test functionality\
+\
+CLEAR SEARCH RESPONSE\
+1. Create on click function for search clear button\
+2. Empty Div\
+3. Get update inventory\
+4. Test\
+\
+
+\fs36 \
+}

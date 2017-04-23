@@ -1,0 +1,68 @@
+html,body{
+  margin: 0;
+  padding: 0;
+}
+
+h1{
+  text-align: center;
+}
+
+div{
+  padding: 15px;
+}
+
+#addItems{
+  background-color: firebrick;
+}
+
+  #nameInAdd{
+
+
+  }
+
+  #descriptionInAdd{
+
+
+  }
+
+  #addItemButton{
+
+
+  }
+/*end addItems Div*/
+
+#searchItems{
+  background-color: khaki;
+}
+
+  #nameInSearch{
+
+
+  }
+
+  #searchByNameButton{
+
+
+  }
+
+  #descriptionInSearch{
+
+
+  }
+
+  #searchByDescriptionButton{
+
+
+  }
+
+  #clearSearchButton{
+
+
+  }
+  /*end searchItems div*/
+
+#outputDiv{
+  background-color: palegoldenrod;
+
+}
+/*end outputDiv*/
